@@ -21,9 +21,8 @@ rl.question('Type in string to check for palindrome: ', input => {
     const str = input;
     console.log(isPalindrome(str));
     process.exit();
-    //once function is ran, exit the process
 })
-//rl to create interface
+
 
 // solution
 function isPalindrome(string) {

@@ -3,6 +3,7 @@ My JavaScript solutions to some code challenges on different platforms that can 
 
 ## Algo Expert
 - [x] Palindrone
+- [x] Three Number Sort
 ## Code Wars
 - 8 kyu
 	- [x] Character Frequency
