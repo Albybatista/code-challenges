@@ -24,7 +24,7 @@ rl.question('Type in string to check for palindrome: ', input => {
 })
 
 
-// solution
+//SOLUTION
 function isPalindrome(string) {
   // Write your code here.
   let bool = false;
