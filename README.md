@@ -12,3 +12,4 @@ My JavaScript solutions to some code challenges on different platforms that can 
 	- [x] Multiplication Table
 	- [x] NBA Full 48 Mins Average
 	- [x] Reversed Sequence
+	- [x] USD to CNY
