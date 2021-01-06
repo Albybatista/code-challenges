@@ -35,7 +35,7 @@ function bubbleSort(array) {
   // iterate through the array
   for(let i = 0; i < array.length - 1; i++) {
     // compare first element to the next element
-    for (let j = i+1; j < array.length; j++) {
+    for (let j = i + 1; j < array.length; j++) {
   		// if the right element is less than the left, move it to the left
    		if (array[i] > array[j]) {
       	// swap(i, j, array);
@@ -66,8 +66,8 @@ function bubbleSortAnother(array) {
   while (isSorted) {
     isSorted = false;
     for (let i = 0; i < array.length; i++) {
-      if (array[i]>array[i+1]) {
-        swap(i,i+1, array)
+      if (array[i] > array[i + 1]) {
+        swap(i, i + 1, array)
         isSorted = true;
       }
 		}
