@@ -9,4 +9,5 @@ My JavaScript solutions to some code challenges on different platforms that can 
 ## Code Wars
 - 8 kyu
 	- [x] Character Frequency
+	- [x] Multiplication Table
    
