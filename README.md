@@ -10,4 +10,4 @@ My JavaScript solutions to some code challenges on different platforms that can 
 - 8 kyu
 	- [x] Character Frequency
 	- [x] Multiplication Table
-   
+	- [x] NBA Full 48 Mins Average
