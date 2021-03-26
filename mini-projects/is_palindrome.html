@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Is it a Palindrome?</title>
+</head>
+<body>
+    <!-- 
+            PROMPT
+            Ask the user to give you five words. Then check if any of the five words is a palindrome.
+
+            A palindrome is a word that remains the same whether it's read forward or backward.
+
+            Example:
+
+            madam is a palindrome.
+            so is malayalam.
+            But not geeks. 
+    -->
+    <h1>Is it a Palindrome?</h1>
+    <p id="displayResult"></p>
+    <label>
+        Palindrome Words:
+    </label>
+        <input type="text" placeholder="Ex: madam" id="wordInput">
+    <button onclick="palindromeCheck();">Submit</button>
+    <script>
+        function palindromeCheck(){
+            //take input
+            const palindromeInput = document.getElementById('wordInput').value;
+            const reversedInput = palindromeInput.split("").reverse().join("");
+
+            let successfulResult = new String(`Congrats! ${palindromeInput} is a palindrome!`);
+            let wrongResult = new String(`Unfortunately, ${palindromeInput} is not a valid palindrome. Please try again.`);
+            
+            if(palindromeInput === reversedInput){
+                displayResult.innerHTML = successfulResult;
+                console.log(successfulResult);
+            } else {
+                displayResult.innerHTML = successfulResult;
+            }
+        }
+    </script>
+</body>
+</html>
