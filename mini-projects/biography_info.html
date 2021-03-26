@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biography Info</title>
+</head>
+<body>
+    <h1>Please Enter Your Information Below</h1>
+            <label>Name: </label>
+            <input type="text" id="inputName">
+            <br />
+            <label>Date of Birth: </label>
+            <input type="text" id="inputDob">
+            <br />
+            <label>Address: </label>
+            <input type="text" id="inputAddress">
+            <br />
+            <label>Personal Goals: </label>
+            <input type="text" id="inputGoals">
+            <button type="submit" onclick="getInputInfo();">Submit</button>
+
+            <h2>Biography Info</h2>
+            <p id="name"></p>
+            <p id="dob"></p>
+            <p id="address"></p>
+            <p id="goals"></p>
+    <script>
+        //Biography Info
+        //PROMPT:
+        //Ask a user for their personal information. Then check that the information they entered is valid. Finally, print a summary of all the information they entered back to them.
+
+        //Example: What is your name? If the user enters * you prompt them that the input is wrong, and ask them to enter a valid name.
+
+        //At the end you print a summary that looks like this:
+
+        // - Name: John Doe
+        // - Date of birth: Jan 1, 1954
+        // - Address: 24 fifth Ave, NY
+        // - Personal goals: To be the best programmer there ever was.
+
+        function getInputInfo(){
+            const name = document.getElementById('name');
+            const inputName = document.getElementById('inputName').value;
+            const inputDob = document.getElementById('inputDob').value;
+            const inputAddress = document.getElementById('inputAddress').value;
+            const inputGoals = document.getElementById('inputGoals').value;
+
+            name.innerText = `Name: ${inputName}`;
+            dob.innerText = `Date of Birth: ${inputDob}`;
+            address.innerText = `Address: ${inputAddress}`;
+            goals.innerText = `Personal Goals: ${inputGoals}`;
+
+        }
+        
+
+    </script>
+    
+</body>
+</html>
