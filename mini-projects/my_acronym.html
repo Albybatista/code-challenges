@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Acronym</title>
+</head>
+<body>
+    <h1>My Acronym</h1>
+    <p id="acro"></p>
+    <script>
+        //PROMPT
+        // What's my acronym?
+        //     Ask the user to enter the full meaning of an organization or concept and you'll provide the acronym to the user. For example:
+        //     Input -> As Soon As Possible. Output -> ASAP.
+        //     Input -> World Health Organization. Output -> WHO.
+        //     Input -> Absent Without Leave. Output -> AWOL.
+
+        let myAcronym = prompt("Please enter an organization or concept and we will return you the acronym for it.");
+
+        let getUserInput = document.getElementById('acro'); 
+
+        let up = myAcronym.charAt(0).toUpperCase();
+
+        let splitString = myAcronym.split(" ");
+        console.log(splitString);
+        
+        
+        function upLoop(){
+            for(let i = 0; i < splitString.length; i++){
+            let up = myAcronym.charAt(i).toUpperCase();
+            }
+        }
+        //  if string == " "
+        getUserInput.innerHTML = `Your acronym for your provided response is ${splitString} + ${up}.`;
+        
+        // let word = "hello how are you";
+        // for(let i = 0; i < word.length; i++){
+        // document.write(word[i])
+        // }
+
+        // function acronymLetters(){
+        //     for(let i = 0; i < myAcronym.length; i++){
+        //         let characters = myAcronym.charAt(i);
+        //         console.log(characters);
+        //     }
+        //     return characters;
+        // }
+        // const spaces = [" "];
+        // for(const char of myAcronym){
+        //     if(spaces.indexOf(char) === -1){
+        //         array.push
+        //     }
+        // }
+        
+
+    </script>
+</body>
+</html>
