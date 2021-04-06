@@ -15,50 +15,49 @@
         <option value="paper">Paper</option>
         <option value="scissors">Scissors</option>
     </select>
+    <p id="gameResult"></p>
     <script>
         function startGame() {
             //Grab user selection
             const selectionBox = document.getElementById("selectionBox");
             const userSelection = selectionBox.options[selectionBox.selectedIndex].value;
+
             //Generating computer choice
             const randomNumber = Math.round(Math.random() * 2) + 1;
-            const randomSelection = selectionBox.options[randomNumber].value;
+            const computerSelection = selectionBox.options[randomNumber].value;
+            
+            //Game result messages
+            const gameResult = document.getElementById("gameResult");
+            const winningMsg = `Good stuff! The computer has chosen ${computerSelection} and you have chosen ${userSelection}. You have won this round!`;
+            const losingMsg = `Womp, womp, womp. Unfortunately, you have lost. The computer has chosen ${computerSelection} and you had chosen ${userSelection}. Better luck next time!`;
+            const tieMsg = `Phew, that was close! You have both chosen ${userSelection}. Try again and see if you can win the next round!`;
 
-            const winningMsg = `Good stuff! The computer has chosen ${randomSelection} and you have chosen ${userSelection}. You have won this round!`;
-            const losingMsg = `Womp, womp, womp. Unfortunately, you have lost. The computer has chosen ${randomSelection} and you had chosen ${userSelection}. Better luck next time!`;
-            const tieMsg = `Phew, that was close! You have both chosen ${userSelection}. Try again and see if you can the next round!`;
-
-            //User selects rock
-            if(userSelection === "rock" && randomSelection === "rock") {
-                return tieMsg;
+            
+            //When there is a tie
+            if(userSelection === computerSelection) {
+                gameResult.innerText = tieMsg;
             }
-            if(userSelection === "rock" && randomSelection === "paper") {
-                return losingMsg;
+            if(userSelection === "rock" && computerSelection === "paper") {
+                gameResult.innerText = losingMsg;
             }
-            if(userSelection === "rock" && randomSelection === "scissors") {
-                return winningMsg;
+            if(userSelection === "rock" && computerSelection === "scissors") {
+                gameResult.innerText = winningMsg;
             }
 
             //User selects paper
-            if(userSelection === "paper" && randomSelection === "paper") {
-                return  tieMsg;
+            if(userSelection === "paper" && computerSelection === "rock") {
+                gameResult.innerText = winningMsg;
             }
-            if(userSelection === "paper" && randomSelection === "rock") {
-                return winningMsg;
-            }
-            if(userSelection === "paper" && randomSelection === "scissors") {
-                return losingMsg;
+            if(userSelection === "paper" && computerSelection === "scissors") {
+                gameResult.innerText = losingMsg;
             }
 
             //User selects scissors
-            if(userSelection === "scissors" && randomSelection === "scissors") {
-                return  tieMsg;
+            if(userSelection === "scissors" && computerSelection === "rock") {
+                gameResult.innerText = losingMsg;
             }
-            if(userSelection === "scissors" && randomSelection === "rock") {
-                return losingMsg;
-            }
-            if(userSelection === "scissors" && randomSelection === "paper") {
-                return winningMsg;
+            if(userSelection === "scissors" && computerSelection === "paper") {
+                gameResult.innerText = winningMsg;
             }
         }
     </script>
