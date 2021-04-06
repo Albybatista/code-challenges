@@ -9,13 +9,58 @@
 <body>
     <h1>Rock, Paper, Scissors</h1>
     <label for="selection">Make Your Selection: </label>
-    <select>
-        <option vale="rock">✊🏽 Rock</option>
-        <option value="paper"> 🖐🏽 Paper</option>
-        <option value="scissors"> ✌🏽 Scissors</option>
+    <select id=selectionBox onchange="startGame();">
+        <option disabled selected value></option>
+        <option value="rock">Rock</option>
+        <option value="paper">Paper</option>
+        <option value="scissors">Scissors</option>
     </select>
     <script>
-        
+        function startGame() {
+            //Grab user selection
+            const selectionBox = document.getElementById("selectionBox");
+            const userSelection = selectionBox.options[selectionBox.selectedIndex].value;
+            //Generating computer choice
+            const randomNumber = Math.round(Math.random() * 2) + 1;
+            const randomSelection = selectionBox.options[randomNumber].value;
+
+            const winningMsg = `Good stuff! The computer has chosen ${randomSelection} and you have chosen ${userSelection}. You have won this round!`;
+            const losingMsg = `Womp, womp, womp. Unfortunately, you have lost. The computer has chosen ${randomSelection} and you had chosen ${userSelection}. Better luck next time!`;
+            const tieMsg = `Phew, that was close! You have both chosen ${userSelection}. Try again and see if you can the next round!`;
+
+            //User selects rock
+            if(userSelection === "rock" && randomSelection === "rock") {
+                return tieMsg;
+            }
+            if(userSelection === "rock" && randomSelection === "paper") {
+                return losingMsg;
+            }
+            if(userSelection === "rock" && randomSelection === "scissors") {
+                return winningMsg;
+            }
+
+            //User selects paper
+            if(userSelection === "paper" && randomSelection === "paper") {
+                return  tieMsg;
+            }
+            if(userSelection === "paper" && randomSelection === "rock") {
+                return winningMsg;
+            }
+            if(userSelection === "paper" && randomSelection === "scissors") {
+                return losingMsg;
+            }
+
+            //User selects scissors
+            if(userSelection === "scissors" && randomSelection === "scissors") {
+                return  tieMsg;
+            }
+            if(userSelection === "scissors" && randomSelection === "rock") {
+                return losingMsg;
+            }
+            if(userSelection === "scissors" && randomSelection === "paper") {
+                return winningMsg;
+            }
+        }
     </script>
 </body>
 </html>
